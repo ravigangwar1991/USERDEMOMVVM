@@ -11,12 +11,10 @@ import Foundation
 //MARK:================USER WEBSERIVE METHOD==========================
 
 class UserAPIService: NSObject, Requestable {
-
-    static let instance = UserAPIService()
     
     public var movies: [UserModel]?
 
-    func fetchMovies(callback: @escaping Handler) {
+    func fetchUserList(callback: @escaping Handler) {
         
         request(method: .get, url: Domain.baseUrl() + APIEndpoint.userList) { (result) in
             

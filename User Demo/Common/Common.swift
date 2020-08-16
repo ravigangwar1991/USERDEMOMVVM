@@ -22,9 +22,9 @@ extension FileManager {
         
         let bundle = Bundle.main
         
-        if let path = bundle.url(forResource:fileName, withExtension: "json") {
+        if let path = bundle.path(forResource: fileName, ofType: "json") {
             do {
-                let data = try Data(contentsOf:path)
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 return data
             } catch {
                 // handle error

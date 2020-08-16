@@ -20,11 +20,16 @@ class UserListVM:UserListVMProtocol{
     //MARK:================PROPERTIES==========================
 
     var reloadView: (() -> Void)?
+    var userService:UserAPIService!
     
     private var userList: [UserModel]? {
         didSet {
             self.reloadView?()
         }
+    }
+    
+    init() {
+        self.userService = UserAPIService()
     }
     
     //MARK:================CUSTOM METHOD==========================
@@ -52,7 +57,7 @@ class UserListVM:UserListVMProtocol{
         
         self.userList = [UserModel]()
         showActivityLoader(view: view)
-        UserAPIService.instance.fetchMovies { (result) in
+        self.userService.fetchUserList { (result) in
             hideActivityLoader()
             switch result {
                 

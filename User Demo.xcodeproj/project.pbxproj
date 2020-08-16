@@ -58,13 +58,11 @@
 		4189F13024E7AE8A00890D77 /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F10B24E7845E00890D77 /* UserListTableViewCell.swift */; };
 		4189F13224E7B17400890D77 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13124E7B17400890D77 /* UserModelTests.swift */; };
 		4189F13424E7B18600890D77 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13324E7B18600890D77 /* UserListViewModelTests.swift */; };
-		4189F13624E7B19700890D77 /* UserDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13524E7B19700890D77 /* UserDetailsViewModelTests.swift */; };
-		4189F13824E7B1CA00890D77 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F13724E7B1CA00890D77 /* user.json */; };
-		4189F13924E7B1CA00890D77 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F13724E7B1CA00890D77 /* user.json */; };
-		4189F13A24E7B1CA00890D77 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F13724E7B1CA00890D77 /* user.json */; };
 		4189F13D24E7E0FE00890D77 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13C24E7E0FE00890D77 /* Common.swift */; };
-		4189F13E24E7E0FE00890D77 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13C24E7E0FE00890D77 /* Common.swift */; };
-		4189F13F24E7E0FE00890D77 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13C24E7E0FE00890D77 /* Common.swift */; };
+		4189F14524E8F92A00890D77 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14424E8F92A00890D77 /* User.json */; };
+		4189F14624E8F9C600890D77 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14424E8F92A00890D77 /* User.json */; };
+		4189F14824E8FA0200890D77 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14724E8FA0100890D77 /* sample.json */; };
+		4189F14924E8FB1400890D77 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13C24E7E0FE00890D77 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,9 +112,9 @@
 		4189F11324E7AC4400890D77 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		4189F13124E7B17400890D77 /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
 		4189F13324E7B18600890D77 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
-		4189F13524E7B19700890D77 /* UserDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModelTests.swift; sourceTree = "<group>"; };
-		4189F13724E7B1CA00890D77 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		4189F13C24E7E0FE00890D77 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		4189F14424E8F92A00890D77 /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		4189F14724E8FA0100890D77 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,10 +189,11 @@
 		4189F0C924E6CFC200890D77 /* User DemoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				4189F14724E8FA0100890D77 /* sample.json */,
+				4189F14424E8F92A00890D77 /* User.json */,
 				4189F0CA24E6CFC200890D77 /* User_DemoUITests.swift */,
 				4189F13124E7B17400890D77 /* UserModelTests.swift */,
 				4189F13324E7B18600890D77 /* UserListViewModelTests.swift */,
-				4189F13524E7B19700890D77 /* UserDetailsViewModelTests.swift */,
 				4189F0CC24E6CFC200890D77 /* Info.plist */,
 			);
 			path = "User DemoUITests";
@@ -237,7 +236,6 @@
 		4189F0DD24E6D17B00890D77 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4189F13724E7B1CA00890D77 /* user.json */,
 				4189F0DE24E6D17B00890D77 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -446,7 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4189F13824E7B1CA00890D77 /* user.json in Resources */,
+				4189F14524E8F92A00890D77 /* User.json in Resources */,
 				4189F0F224E6D17C00890D77 /* Main.storyboard in Resources */,
 				4189F0F024E6D17C00890D77 /* Assets.xcassets in Resources */,
 				4189F0F124E6D17C00890D77 /* LaunchScreen.storyboard in Resources */,
@@ -457,7 +455,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4189F13924E7B1CA00890D77 /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +462,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4189F13A24E7B1CA00890D77 /* user.json in Resources */,
+				4189F14624E8F9C600890D77 /* User.json in Resources */,
+				4189F14824E8FA0200890D77 /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +498,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4189F13E24E7E0FE00890D77 /* Common.swift in Sources */,
 				4189F11924E7AE4500890D77 /* Global.swift in Sources */,
 				4189F12124E7AE5600890D77 /* UserApiService.swift in Sources */,
 				4189F12324E7AE6800890D77 /* UserDetailsVM.swift in Sources */,
@@ -527,9 +524,9 @@
 				4189F12224E7AE5700890D77 /* UserApiService.swift in Sources */,
 				4189F13224E7B17400890D77 /* UserModelTests.swift in Sources */,
 				4189F12424E7AE6900890D77 /* UserDetailsVM.swift in Sources */,
+				4189F14924E8FB1400890D77 /* Common.swift in Sources */,
 				4189F12624E7AE7100890D77 /* UserDetailsTableViewCell.swift in Sources */,
 				4189F12024E7AE5200890D77 /* AppNetworking.swift in Sources */,
-				4189F13624E7B19700890D77 /* UserDetailsViewModelTests.swift in Sources */,
 				4189F12C24E7AE8000890D77 /* UserModel.swift in Sources */,
 				4189F13424E7B18600890D77 /* UserListViewModelTests.swift in Sources */,
 				4189F12A24E7AE7B00890D77 /* UserListVM.swift in Sources */,
@@ -538,7 +535,6 @@
 				4189F0CB24E6CFC200890D77 /* User_DemoUITests.swift in Sources */,
 				4189F13024E7AE8A00890D77 /* UserListTableViewCell.swift in Sources */,
 				4189F11824E7AE4200890D77 /* AppStoryBoard.swift in Sources */,
-				4189F13F24E7E0FE00890D77 /* Common.swift in Sources */,
 				4189F11624E7AE3E00890D77 /* AppUrl.swift in Sources */,
 				4189F12824E7AE7400890D77 /* UserDetailsVC.swift in Sources */,
 				4189F11C24E7AE4900890D77 /* AppLoader.swift in Sources */,
