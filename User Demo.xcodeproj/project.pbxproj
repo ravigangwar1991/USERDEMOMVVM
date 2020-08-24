@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4124111224F21243000DE08F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13C24E7E0FE00890D77 /* Common.swift */; };
+		4124111324F2124C000DE08F /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14424E8F92A00890D77 /* User.json */; };
+		4124111424F2127C000DE08F /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14424E8F92A00890D77 /* User.json */; };
 		4189F0C024E6CFC100890D77 /* User_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F0BF24E6CFC100890D77 /* User_DemoTests.swift */; };
 		4189F0CB24E6CFC200890D77 /* User_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F0CA24E6CFC200890D77 /* User_DemoUITests.swift */; };
 		4189F0F024E6D17C00890D77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4189F0DE24E6D17B00890D77 /* Assets.xcassets */; };
@@ -59,9 +62,7 @@
 		4189F13224E7B17400890D77 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13124E7B17400890D77 /* UserModelTests.swift */; };
 		4189F13424E7B18600890D77 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13324E7B18600890D77 /* UserListViewModelTests.swift */; };
 		4189F13D24E7E0FE00890D77 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13C24E7E0FE00890D77 /* Common.swift */; };
-		4189F14524E8F92A00890D77 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14424E8F92A00890D77 /* User.json */; };
 		4189F14624E8F9C600890D77 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14424E8F92A00890D77 /* User.json */; };
-		4189F14824E8FA0200890D77 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 4189F14724E8FA0100890D77 /* sample.json */; };
 		4189F14924E8FB1400890D77 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13C24E7E0FE00890D77 /* Common.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,7 +115,6 @@
 		4189F13324E7B18600890D77 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		4189F13C24E7E0FE00890D77 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		4189F14424E8F92A00890D77 /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
-		4189F14724E8FA0100890D77 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +189,6 @@
 		4189F0C924E6CFC200890D77 /* User DemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4189F14724E8FA0100890D77 /* sample.json */,
 				4189F14424E8F92A00890D77 /* User.json */,
 				4189F0CA24E6CFC200890D77 /* User_DemoUITests.swift */,
 				4189F13124E7B17400890D77 /* UserModelTests.swift */,
@@ -444,7 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4189F14524E8F92A00890D77 /* User.json in Resources */,
+				4124111424F2127C000DE08F /* User.json in Resources */,
 				4189F0F224E6D17C00890D77 /* Main.storyboard in Resources */,
 				4189F0F024E6D17C00890D77 /* Assets.xcassets in Resources */,
 				4189F0F124E6D17C00890D77 /* LaunchScreen.storyboard in Resources */,
@@ -455,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4124111324F2124C000DE08F /* User.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +463,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4189F14624E8F9C600890D77 /* User.json in Resources */,
-				4189F14824E8FA0200890D77 /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4124111224F21243000DE08F /* Common.swift in Sources */,
 				4189F11924E7AE4500890D77 /* Global.swift in Sources */,
 				4189F12124E7AE5600890D77 /* UserApiService.swift in Sources */,
 				4189F12324E7AE6800890D77 /* UserDetailsVM.swift in Sources */,

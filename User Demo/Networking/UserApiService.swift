@@ -23,4 +23,13 @@ class UserAPIService: NSObject, Requestable {
         
     }
     
+    func getDataFromModel(callback: @escaping Handler){
+        
+        if let data = FileManager.readJson(forResource: "User"){
+            callback(.success(data))
+        }else{
+            callback(.failure(nil, false))
+        }
+    }
+    
 }

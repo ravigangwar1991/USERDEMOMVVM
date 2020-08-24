@@ -22,7 +22,7 @@ class UserListVM:UserListVMProtocol{
     var reloadView: (() -> Void)?
     var userService:UserAPIService!
     
-    private var userList: [UserModel]? {
+    var userList: [UserModel]? {
         didSet {
             self.reloadView?()
         }
@@ -72,6 +72,5 @@ class UserListVM:UserListVMProtocol{
                 print(error?.localizedDescription ?? "")
             }
         }
-        
     }
 }

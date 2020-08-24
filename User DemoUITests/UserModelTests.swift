@@ -13,59 +13,18 @@ class UserModelTests: XCTestCase {
     var userService:UserAPIService!
     var listVm:UserListVM!
     
-    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         self.userService = UserAPIService()
+        self.listVm = UserListVM()
+       
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
         self.userService = nil
-    }
-
-    
-    func testParseEmptyUserData() {
-        
-        // giving empty data
-        let data = Data()
-        
-        do{
-            let mappedModel = try JSONDecoder().decode(UserDataResponse.self, from: data) as UserDataResponse
-            
-            if mappedModel.userList.isEmpty{
-                XCTAssert(false, "Json data is not an array")
-            }else{
-                XCTAssert(true, "Json data is an array")
-            }
-        }catch{
-            XCTAssert(true, "Json data is not an array")
-        }
-        
-    }
-    
-    func testParseUserData() {
-        
-        // giving data
-        guard let data = FileManager.readJson(forResource: "User") else {
-            XCTAssert(false, "Can't get data from user.json")
-            return
-        }
-        
-        do{
-            let mappedModel = try JSONDecoder().decode(UserDataResponse.self, from: data) as UserDataResponse
-            
-            if mappedModel.userList.isEmpty{
-                XCTAssert(false, "Json data is not an array")
-            }else{
-                XCTAssert(true, "Json data is an array")
-            }
-        }catch{
-            XCTAssert(true, "Json data is not an array")
-        }
-        
     }
     
     func test_fetchUserList(){
@@ -75,11 +34,12 @@ class UserModelTests: XCTestCase {
                 
             case .success(let data):
                 
-                guard (try? JSONDecoder().decode(UserDataResponse.self, from: data) as UserDataResponse) != nil else {
+                guard let mappedModel = (try? JSONDecoder().decode(UserDataResponse.self, from: data) as UserDataResponse) else {
                     XCTAssert(false, "Json data is not an array")
                     return
                 }
-                
+                self.listVm.userList = mappedModel.userList
+                self.test_getgetNumberOfRows()
                 XCTAssert(true, "Json data is  an array")
 
             case .failure(let error,_):
@@ -89,6 +49,60 @@ class UserModelTests: XCTestCase {
             }
         }
         
+    }
+    
+    func test_getgetNumberOfRows(){
+        
+        self.listVm.reloadView = {[weak self] in
+            guard let wSelf = self else {return}
+            if wSelf.listVm.getNumberOfRows() == 0{
+                XCTAssert(false, "No data available")
+            }else{
+                XCTAssert(true, "item avalible ==\(wSelf.listVm.getNumberOfRows())")
+            }
+        }
+    }
+    
+    
+    func test_getUser(){
+        
+        self.listVm.reloadView = {[weak self] in
+            guard let wSelf = self else {return}
+            if let user = wSelf.listVm.getUser(index: 0){
+                XCTAssert(true, "User is \(user.name ?? "")")
+            }else{
+                XCTAssert(false, "user not avilable")
+            }
+        }
+    }
+    
+    
+    
+    func test_updateDataAtIndex(){
+        
+        self.listVm.reloadView = {[weak self] in
+            guard let wSelf = self else {return}
+            if let user = wSelf.listVm.getUser(index: 0){
+                self?.listVm.updateDataAtIndex(index: 0, user: user)
+                XCTAssert(true, "update data at index 0")
+            }else{
+                XCTAssert(false, "user data not updated")
+            }
+        }
+    }
+    
+    func test_updateFavStatus(){
+        
+        self.listVm.reloadView = {[weak self] in
+            guard let wSelf = self else {return}
+            if let user = wSelf.listVm.getUser(index: 0){
+                wSelf.listVm.updateFavStatus(index: 0)
+                XCTAssert(true, "Fav status updated for user \(user.name ?? "")")
+            }else{
+                XCTAssert(false, "Fav status not updated")
+            }
+        }
+
     }
     
 }

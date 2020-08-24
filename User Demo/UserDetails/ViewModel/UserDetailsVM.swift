@@ -21,7 +21,7 @@ class UserDetailsVM{
 
     var reloadView: (() -> Void)?
     
-    private var userModel: UserModel? {
+    var userModel: UserModel? {
         didSet {
             self.reloadView?()
         }
@@ -29,15 +29,15 @@ class UserDetailsVM{
     
     var selectedIndex:Int = 0
     
+    init() {
+        
+    }
+    
     //MARK:================CUSTOM METHOD==========================
 
     func setUserData(index:Int,user:UserModel?){
         self.selectedIndex = index
         userModel = user
-    }
-    
-    func getNumberOfRows()->Int{
-        return 1
     }
     
     func getUser()->UserModel?{
